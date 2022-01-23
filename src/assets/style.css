@@ -1,0 +1,35 @@
+
+.temperature {
+    margin: 0px;
+    font-size: 100px;
+    padding-top: 50px;
+}
+.weather_part {
+    padding: 25px 35px;
+}
+.humidity {
+    filter: invert();
+    width: 30px;
+    height: 30px;
+}
+.humidity_name {
+    font-size: 20px;
+    font-weight: 700;
+}
+.attribute_size {
+    font-size: 30px;
+    font-weight: 800;
+}
+.other_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: inherit;
+}
+.card.card-updation {
+    background-color: transparent;
+    color: white;
+    border: none;
+    width: 350px;
+    height: 180px;
+    box-shadow: 5px 5px 5px 5px rgb(172, 170, 170);
+}
