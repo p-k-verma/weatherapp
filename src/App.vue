@@ -15,14 +15,20 @@
 import timeDisplay from './components/timeDisplay.vue'
 import cardThing from './components/footer.vue'
 
+
 export default {
   name: 'App',
   components: {
     // HelloWorld,
     timeDisplay,
     cardThing,
-
-  }
+    
+  },
+  data() {
+    return {
+      coronadeatils:'',
+    }
+  },
 }
 </script>
 

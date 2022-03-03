@@ -75,6 +75,14 @@
           {{ Math.round(fullweather.main.temp) }} <sup>o</sup>C
         </h1>
       </div>
+
+      <div class="time d-flex flex-column align-items-center">
+      <h1>{{ hour }}</h1>
+      <h1>{{ minutes }}</h1>
+      <h1>{{ seconds }}</h1>
+      </div>
+
+
       <div class="other_details">
         <div class="d-flex">
           <img
@@ -114,15 +122,12 @@
         </div>
       </div>
     </div>
-    <div class="time">
-      <h1>{{ hour }}</h1>
-      <h1>{{ minutes }}</h1>
-      <h1>{{ seconds }}</h1>
-    </div>
     <h1>{{ days[day] }}</h1>
-    <h1>{{ date }}</h1>
-    <h1>{{ months[month] }}</h1>
-    <h1>{{ year }}</h1>
+    <div class="d-flex">
+      <h1>{{ date }}&nbsp;</h1>
+      <h1>{{ months[month]}}&nbsp;</h1>
+      <h1>{{ year }}</h1>
+    </div>
   </div>
 </template>
 
@@ -141,8 +146,6 @@ export default {
       date: "",
       month: "",
       year: "",
-      API: "1402ed3df0ffdda1b7b6676e342f6616",
-      url: "http://api.openweathermap.org/data/2.5/forecast?id=1273292&appid=",
     };
   },
   methods: {
@@ -158,7 +161,19 @@ export default {
         this.month = hi.getMonth();
         this.year = hi.getFullYear();
         if (this.hour > 12) {
-          this.hour = this.hour - 12;
+          this.hour = this.hour-12;
+        }
+        if (this.hour < 10) {
+          this.hour = `0${this.hour}`;
+        } 
+        if (this.hour == 0) {
+          this.hour = `12`;
+        } 
+        if (this.minutes<10) {
+          this.minutes = `0${this.minutes}`
+        }
+        if (this.seconds<10) {
+          this.seconds = `0${this.seconds}`
         }
       }, 1000);
     },
@@ -186,7 +201,11 @@ export default {
 .time {
   display: flex;
   color: white;
+  justify-content: center;
 }
+.time h1 {
+  font-size: 80px;
+} 
 * {
   color: white;
 }

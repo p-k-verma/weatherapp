@@ -1,4 +1,9 @@
-
+/* .card.card-updation.slide.agile__slide {
+    width: 200px!important;
+} */
+/* .agile__track {
+    transform: translate(0px)!important;
+} */
 .temperature {
     margin: 0px;
     font-size: 100px;
@@ -29,7 +34,7 @@
     background-color: transparent;
     color: white;
     border: none;
-    width: 350px;
+    width: 12%;
     height: 180px;
-    box-shadow: 5px 5px 5px 5px rgb(172, 170, 170);
+    /* box-shadow: 5px 5px 5px 5px rgb(172, 170, 170); */
 }
